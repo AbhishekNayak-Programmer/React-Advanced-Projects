@@ -13,3 +13,19 @@ const StyledSelect = styled.select`
   font-weight: 500;
   box-shadow: var(--shadow-sm);
 `;
+
+const Select = ({ options, value, type, onChange }) => {
+  return (
+    <StyledSelect onChange={onChange} value={value} type={type}>
+      {options.map((el) => {
+        return (
+          <option value={el.value} key={el.value}>
+            {el.label}
+          </option>
+        );
+      })}
+    </StyledSelect>
+  );
+};
+
+export default Select;
